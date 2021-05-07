@@ -3,6 +3,7 @@ import logging
 
 
 def lecture(fichier):
+    # fonction qui permet de ouvrire et de lire un fichier texte
     f = open(fichier, "r", encoding="utf-8")
     logging.info("ouverture du fichier")
     texte = f.read()
@@ -21,6 +22,9 @@ def minute(min, min2):
 
     return b - a
     logging.info("calcule la soustraction en minute")
+
+
+
 
 print(minute(221,222))
 
