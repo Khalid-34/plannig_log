@@ -23,11 +23,37 @@ def minute(min, min2):
     return b - a
     logging.info("calcule la soustraction en minute")
 
+def converter(heure):
+    heure1 = int(heure[0:2])*60 + int(heure[3:5])
+    heure2 = int(heure[6:8])*60 + int(heure[9:11])
+    return heure2 - heure1
+
 def relever_valeur():
-    l = lecture('planning.log')
-    l = l.split()
-    for i in l:
-        return i
+    # l = lecture('planning.log')
+    f = open('planning.log', "r", encoding="utf-8")
+    # l = l[0:10]
+    # for i in f.readlines():
+    f =  f.readlines()
+    valeur_min = []
+    for i in f:
+        if i != '\n':
+            valeur_min.append(converter(i[0:11]))
+            return valeur_min
+            # print(converter(i[0:11]))
+    
+
+    # f = f[0]
+    
+  
+    # return f[0:11]
+
+
+print(relever_valeur())
+
+
+# print(converter('09:20-11:00')) 
+    
+
 
     # for i in l:
     #     # i = i.strip(",")
@@ -36,7 +62,7 @@ def relever_valeur():
 
 
 
-print(relever_valeur())
+# print(relever_valeur())
 
 
 # print(minute(221,222))
