@@ -38,7 +38,8 @@ def relever_valeur():
     for i in f:
         if i != '\n':
             valeur_min.append(converter(i[0:11]))
-            return valeur_min
+        
+    return valeur_min
             # print(converter(i[0:11]))
     
 
