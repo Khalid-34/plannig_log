@@ -53,17 +53,16 @@ def theme():
     return nom_valeur
     
 def regroupement(dict1, dict2):
-    dict_from_list = dict(zip(dict1, dict2))
+    dict_from_list = {}
+    for t in dict1:
+        for r in dict2:
+            dict_from_list[t] = r
+            dict2.remove(r)
+            break
     return dict_from_list
 
-# dict_valeur = {}
-
-# for t in theme():
-#     for r in relever_valeur():
-#         dict_valeur[t] = r
-#         relever_valeur.remove(r)
-        
-# print(dict_valeur)
+    # dict_from_list = dict(zip(dict1, dict2))
+    # return dict_from_list 
 
 
 
@@ -76,10 +75,6 @@ print(regroupement(theme(),relever_valeur() ))
     
 
 
-    # for i in l:
-    #     # i = i.strip(",")
-    #     # list_temps[i] = 
-    # return l
 
 
 
