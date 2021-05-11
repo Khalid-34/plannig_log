@@ -38,19 +38,39 @@ def relever_valeur():
     for i in f:
         if i != '\n':
             valeur_min.append(converter(i[0:11]))
-        
-    return valeur_min
+    # valeur_min ="".join(valeur_min)        
+    return valeur_min 
             # print(converter(i[0:11]))
+
+def theme():
+    f = open('planning.log',"r", encoding="utf-8")
+    texte = f.readlines()
+    nom_valeur = []
+    for i in texte:
+        if i != '\n':
+            nom_valeur.append(i[12:-1])
+            # print(i[12:-1])
+    return nom_valeur
     
+def regroupement(dict1, dict2):
+    dict_from_list = dict(zip(dict1, dict2))
+    return dict_from_list
 
-    # f = f[0]
-    
-  
-    # return f[0:11]
+# dict_valeur = {}
+
+# for t in theme():
+#     for r in relever_valeur():
+#         dict_valeur[t] = r
+#         relever_valeur.remove(r)
+        
+# print(dict_valeur)
 
 
+
+
+print(theme())
 print(relever_valeur())
-
+print(regroupement(theme(),relever_valeur() ))
 
 # print(converter('09:20-11:00')) 
     
